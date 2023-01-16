@@ -31,7 +31,7 @@ export class TodoMainWidgetComponent implements OnInit, OnDestroy {
     this.fetchSubscription = this.todoService
       .fetchTodo()
       .subscribe((response) => {
-        if (response) this.todos = Object.entries(response);
+        if (response) this.todos = Object.entries(response).reverse();
       });
   }
   deleteTodo(key: string) {

@@ -2,7 +2,8 @@
   <div class="todo-body">
     <h1 class='title'>Todo List App</h1>
     <div class="todo-cards-block">
-      <app-todo-card (onDelete)="deleteTodo($event)" *ngFor="let todo of todos" [todo]="todo"></app-todo-card>
+      <app-todo-card (onUpdate)="fetchTodos()" (onDelete)="deleteTodo($event)" *ngFor="let todo of todos"
+        [todo]="todo"></app-todo-card>
       <div *ngIf="todos.length===0">
         <h3 class='small-title'>There are not todos</h3>
       </div>

@@ -10,6 +10,7 @@ import { Todo } from '../todo-main-widget/todo-main-widget.component';
 export class TodoCardComponent implements OnInit {
   @Input() todo: [string, Todo];
   @Output() onDelete = new EventEmitter<string>();
+  @Output() onUpdate = new EventEmitter();
 
   isDone = false;
   menuOpened = false;
@@ -18,7 +19,10 @@ export class TodoCardComponent implements OnInit {
   ngOnInit(): void {}
 
   toggle() {
-    this.isDone = !this.isDone;
+    this.todoService.updateTodo(this.todo[1], this.todo[0]).subscribe(() => {
+      console.log('updated');
+      this.onUpdate.emit();
+    });
   }
   menuToggle() {
     this.menuOpened = !this.menuOpened;
