@@ -1,0 +1,16 @@
+<div class='todo-block wrapper'>
+  <div class="todo-body">
+    <h1 class='title'>Todo List App</h1>
+    <div class="todo-cards-block">
+      <app-todo-card (onDelete)="deleteTodo($event)" *ngFor="let todo of todos" [todo]="todo"></app-todo-card>
+      <div *ngIf="todos.length===0">
+        <h3 class='small-title'>There are not todos</h3>
+      </div>
+    </div>
+    <button (click)="showTodoInputModal=true" class="add-todo-btn">
+      <img src="../../../../assets/icons/add.png" alt="Add-icon">
+    </button>
+    <app-todo-input (onSubmit)="fetchTodos()" (onClose)="showTodoInputModal=false"
+      *ngIf="showTodoInputModal"></app-todo-input>
+  </div>
+</div>

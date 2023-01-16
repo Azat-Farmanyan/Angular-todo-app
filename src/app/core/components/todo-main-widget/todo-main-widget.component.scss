@@ -1,0 +1,40 @@
+.todo-block {
+  position: relative;
+  background-color: var(--blue);
+  display: flex;
+  padding: 60px 10px;
+  height: 100%;
+  justify-content: center;
+
+  .todo-body {
+    background-color: var(--white);
+    // background-color: var(--medium-gray);
+    max-width: 546px;
+    width: 100%;
+    padding: 35px 15px 35px 30px;
+    border-radius: 25px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    .todo-cards-block {
+      overflow-y: auto;
+      overflow-x: none;
+      padding: 25px 0 50px 0;
+      // width: 450px;
+    }
+    .add-todo-btn {
+      padding: 20px;
+      border-radius: 50%;
+      background: var(--pink);
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 0px 9px rgba(22, 0, 59, 0.2);
+      position: absolute;
+      bottom: -19px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      &:hover {
+        transition: all 0.5s ease;
+        filter: brightness(1.3);
+      }
+    }
+  }
+}

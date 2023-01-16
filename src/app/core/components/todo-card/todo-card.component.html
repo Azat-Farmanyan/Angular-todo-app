@@ -1,0 +1,31 @@
+<div class="todo-card">
+  <div *ngIf="todo[1].date" class='date'>
+    <p>{{todo[1].date}}</p>
+  </div>
+  <div class="todo-card-body">
+
+    <img (click)="menuToggle()" class='menu-icon' src="../../../../assets/icons/menu.png" alt="menu-icon">
+
+    <p class='todo-text' [ngClass]="{
+      'strikethrough': todo[1].done
+    }">
+      {{todo?todo[1].description:''}}
+    </p>
+    <button (click)="toggle()" [ngClass]="{
+      'pink-bg': todo[1].done
+    }" class='toggle'>
+      <img class='done-icon' src="../../../../assets/icons/done-icon.png" alt="done">
+    </button>
+
+    <div *ngIf="menuOpened" class='menu'>
+      <button (click)="deleteTodo()" class='menu-item'>
+        <img class='menu-item-icon' src="../../../../assets/icons/delete-icon.png" alt="delete icon">
+        <p>Delete</p>
+      </button>
+      <button class='menu-item'>
+        <img class='menu-item-icon' src="../../../../assets/icons/edit-icon.png" alt="delete icon">
+        <p>Edit</p>
+      </button>
+    </div>
+  </div>
+</div>
