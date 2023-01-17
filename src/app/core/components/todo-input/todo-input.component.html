@@ -3,12 +3,12 @@
   <h3 class='title '>Add new todo list</h3>
   <input formControlName='todo' type="text" placeholder='Go to gym'>
   <div class="btns">
+    <button type='button' (click)="onClose.emit()" class='btn '>Cancel</button>
 
-    <button [ngClass]="{
+    <button class="danger" [ngClass]="{
       'disabled': !form.get('todo')?.valid,
       'btn': form.get('todo')?.valid
     }" [disabled]="!form.get('todo')?.valid" type='submit'>Add</button>
-    <button type='button' (click)="onClose.emit()" class='btn danger'>Cancel</button>
 
   </div>
 </form>
