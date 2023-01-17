@@ -17,7 +17,7 @@ export interface Todo {
 })
 export class TodoMainWidgetComponent implements OnInit, OnDestroy {
   todos: [string, Todo][] = [];
-  showTodoInputModal = true;
+  showTodoInputModal = false;
 
   fetchSubscription: Subscription;
 

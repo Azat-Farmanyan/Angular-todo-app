@@ -1,0 +1,11 @@
+<div (click)="onClose.emit()" class='bg'></div>
+<form class="todo-modal" [formGroup]='form' (ngSubmit)="updateTodo()">
+  <h3 class='title '>Edit todo</h3>
+  <input formControlName='todo' type="text" placeholder='Go to gym'>
+  <div class="btns">
+    <button type='button' (click)="onClose.emit()" class='btn '>Cancel</button>
+
+    <button class="danger btn" type='submit'>Update</button>
+
+  </div>
+</form>

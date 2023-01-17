@@ -14,6 +14,7 @@ export class TodoCardComponent implements OnInit {
 
   isDone = false;
   menuOpened = false;
+  showUpdateModal = false;
 
   constructor(public todoService: TodoService) {}
   ngOnInit(): void {}

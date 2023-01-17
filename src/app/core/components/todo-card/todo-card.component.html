@@ -22,10 +22,12 @@
         <img class='menu-item-icon' src="../../../../assets/icons/delete-icon.png" alt="delete icon">
         <p>Delete</p>
       </button>
-      <button class='menu-item'>
+      <button (click)="showUpdateModal=true" class='menu-item'>
         <img class='menu-item-icon' src="../../../../assets/icons/edit-icon.png" alt="delete icon">
         <p>Edit</p>
       </button>
     </div>
   </div>
 </div>
+<app-todo-update (onUpdate)="onUpdate.emit()" (onClose)="showUpdateModal=false" [todo]=" todo"
+  *ngIf="showUpdateModal"></app-todo-update>

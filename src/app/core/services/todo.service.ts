@@ -27,6 +27,12 @@ export class TodoService {
       done: !item.done,
     });
   }
+  editTodo(item: Todo, key: string, description: string) {
+    return this.http.patch(`${this.baseUrl}todos/${key}.json`, {
+      description: description,
+      date: new Date().toISOString().split('T')[0],
+    });
+  }
   deleteTodo(key: string) {
     return this.http.delete(`${this.baseUrl}todos/${key}.json`);
   }

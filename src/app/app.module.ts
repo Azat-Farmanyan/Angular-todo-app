@@ -11,6 +11,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TodoInputComponent } from './core/components/todo-input/todo-input.component';
 import { LoadInterceptor } from './core/load.interceptor';
 import { LoaderSpinnerComponent } from './core/components/loader-spinner/loader-spinner.component';
+import { TodoUpdateComponent } from './core/components/todo-update/todo-update.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +20,7 @@ import { LoaderSpinnerComponent } from './core/components/loader-spinner/loader-
     NotFoundPageComponent,
     TodoInputComponent,
     LoaderSpinnerComponent,
+    TodoUpdateComponent,
   ],
   imports: [
     BrowserModule,
