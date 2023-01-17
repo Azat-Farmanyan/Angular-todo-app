@@ -17,7 +17,7 @@ export interface Todo {
 })
 export class TodoMainWidgetComponent implements OnInit, OnDestroy {
   todos: [string, Todo][] = [];
-  showTodoInputModal = false;
+  showTodoInputModal = true;
 
   fetchSubscription: Subscription;
 
@@ -43,7 +43,6 @@ export class TodoMainWidgetComponent implements OnInit, OnDestroy {
       return el[0] !== key;
     });
   }
-
 
   ngOnDestroy(): void {
     this.fetchSubscription.unsubscribe();
